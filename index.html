@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Test</title>
+
+    <style>
+        #yesButton {
+            transition: transform 0.2s, font-size 0.2s; /* Smooth transition for size changes */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto relative h-screen z-0">
+        <div class="flex flex-col justify-center items-center h-screen">
+            <span class="text-6xl font-medium text-red-400 my-24">Will you be my Valentine? 🌹</span>
+            <div class="flex items-center gap-4 z-10">
+                <button type="button" id="yesButton" data-scale="1" data-size="16" class="px-12 py-4 bg-green-400 text-white" onclick="acceptedFunction()">Yes</button>
+                <button type="button" id="noButton" class="px-12 py-4 bg-red-400 text-white">No</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {  
+    $("#noButton").on("click", function (){
+        console.log("No");
+        var scale = $('#yesButton').attr('data-scale');
+        var fontSize = $('#yesButton').attr('data-size');
+
+        console.log(scale);
+
+        var toprandom = Math.floor(Math.random() * (100 / 4)) * 4;
+        var bottomrandom = Math.floor(Math.random() * (100 / 4))  * 4;
+        var leftrandom = Math.floor(Math.random() * (100 / 4))  * 4;
+        var rightrandom = Math.floor(Math.random() * (100 / 4))  * 4;
+
+        var html = `<div class=" mx-auto absolute top-${toprandom} right-${rightrandom} left-${leftrandom} bottom-${bottomrandom}">
+            <img src="1.png" width="100" height= "200" alt="photo" class="mx-auto mb-10"/>
+            <button type="button" class="px-10 py-2 bg-pink-400 text-white" onclick="acceptedFunction()">Sana mag YES!</button>
+        </div>`;
+        $(".container").append(html);
+
+        scale *= 1.1; // Increase scale by 10%
+        fontSize *= 1.1; // Increase font size by 10%
+
+        $('#yesButton').attr('data-scale', scale);
+        $('#yesButton').attr('data-size', fontSize);
+
+        $('#yesButton').css('transform', 'scale(' + scale + ')');
+        $('#yesButton').css('font-size', fontSize + 'px');
+    });
+});  
+
+function acceptedFunction(){
+    console.log("Yes");
+    location.href = "/Projects/project/accepted.html"
+}
+</script>
