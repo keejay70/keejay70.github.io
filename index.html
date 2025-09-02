@@ -4,80 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>🌹</title>
+    <title>Index</title>
 </head>
 <body>
     <div class="container mx-auto relative h-screen z-0">
         <div class="flex flex-col justify-center items-center h-screen">
-            <span class="text-6xl font-medium text-red-400 my-16 text-center" id="counter"></span>
-            <span class="text-4xl font-medium text-red-400 text-center" id="anniversary">----</span>
-            <span class="text-l font-medium text-red-400 text-center">till next annivesary</span>
+            <span class="text-4xl font-medium text-black text-center">Hello World</span>
         </div>
     </div>
 </body>
 </html>
-<script>
-
-    counter();
-    timer();
-
-    function counter()
-    {
-        let startDate = new Date('2023-05-27');
-        let today = new Date();
-
-        let timeDiff = today - startDate;
-
-        let totalDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        
-        let years = Math.floor(totalDays / 365);
-        let remainingDaysAfterYears = totalDays % 365;
-        let months = Math.floor(remainingDaysAfterYears / 30);
-        let days = remainingDaysAfterYears % 30;
-
-        let yearText = this.parseText(years, 'year');
-        let monthText = this.parseText(months, 'month');
-        let dayText = this.parseText(days, 'day');
-
-        document.getElementById('counter').textContent = `${yearText}, ${monthText}, ${dayText}`;
-    }
-
-    function timer()
-    {
-        let endDate = new Date('2026-05-27');
-        let today = new Date();
-
-        let timeDiff = endDate - today;
-
-        let totalDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        let years = Math.floor(totalDays / 365);
-        let remainingDaysAfterYears = totalDays % 365;
-        let months = Math.floor(remainingDaysAfterYears / 30);
-        let days = remainingDaysAfterYears % 30;
-
-        let yearText = this.parseText(years, 'year');
-        let monthText = this.parseText(months, 'month');
-        let dayText = this.parseText(days, 'day');
-
-        document.getElementById('anniversary').textContent = `${yearText}, ${monthText}, ${dayText}`;
-    }
-
-    function getNextYearDate(dateString) 
-    {
-        let date = new Date(dateString);
-
-        date.setFullYear(date.getFullYear() + 1);
-
-        return new Date(date.toISOString().split('T')[0]);
-    }
-
-    function parseText(num, name)
-    {
-        if (num > 1)
-        {
-            name = name + 's';
-        }
-
-        return `${num} ${name}`;
-    }
-</script>
