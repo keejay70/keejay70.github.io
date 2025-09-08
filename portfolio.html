@@ -1,194 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Kent Setenta | Developer Portfolio</title>
-	<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kent Setenta | Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-	<section id="about" class="max-w-5xl mx-auto mt-6 p-8 bg-white shadow rounded-xl">
-		<div class="flex flex-col md:flex-row items-center md:space-x-8">
+  <!-- Dark Mode Toggle -->
+  <div class="fixed top-4 right-4">
+    <button id="theme-toggle"
+      class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full shadow hover:scale-105 transition">
+      🌙
+    </button>
+  </div>
 
-			<div class="flex-shrink-0 mb-6 md:mb-0">
-				<img src="src/1751375304710.webp" alt="Profile" class="w-36 h-36 rounded-full border-4 border-gray-200">
-			</div>
+  <!-- About Section -->
+  <section id="about" class="max-w-5xl mx-auto mt-6 p-8 bg-white shadow rounded-xl dark:bg-gray-800">
+    <div class="flex flex-col md:flex-row items-center md:space-x-8">
+      <!-- Profile Photo -->
+      <div class="flex-shrink-0 mb-6 md:mb-0">
+        <img src="src/1751375304710.webp" alt="Profile"
+          class="w-36 h-36 rounded-full border-4 border-gray-200 dark:border-gray-700">
+      </div>
+      <!-- Info -->
+      <div class="flex-1 flex flex-col items-center md:items-start">
+        <h1 class="text-3xl font-bold text-center md:text-left">Kent Setenta</h1>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 text-center md:text-left">
+          Full-Stack Developer | API & Database Specialist
+        </p>
+        <!-- LinkedIn Link -->
+        <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank"
+          class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+          <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-3.svg" alt="LinkedIn"
+            class="w-6 h-6">
+        </a>
+      </div>
+    </div>
+  </section>
 
-			<div class="flex-1 flex flex-col items-center md:items-start">
-				<h1 class="text-3xl font-bold text-center md:text-left">Kent Setenta</h1>
-				<p class="text-gray-600 mb-4 text-center md:text-left">
-					Backend Developer with API & Database Expertise | Frontend-Capable
-				</p>
+  <!-- About + Tech Stack + Experience Row -->
+  <section class="max-w-5xl mx-auto my-6 grid grid-cols-1 md:grid-cols-5 gap-6">
 
-				<a href="https://www.linkedin.com/in/kent-setenta/" target="_blank"
-					class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800">
-					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"
-						class="w-6 h-6">
-				</a>
-			</div>
-		</div>
-	</section>
+    <!-- About + Tech Stack Column -->
+    <div id="about-tech" class="md:col-span-2 flex flex-col gap-6">
 
-	<section class="max-w-5xl mx-auto my-6 grid grid-cols-1 md:grid-cols-5 gap-6">
+      <!-- About Card -->
+      <div class="p-6 bg-white shadow rounded-xl h-full dark:bg-gray-800">
+        <h2 class="text-2xl font-semibold">About</h2>
+        <hr class="max-w-5xl mx-auto my-2 border-gray-300 dark:border-gray-600">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          I am a motivated and adaptable developer with a strong focus on backend development, specializing in APIs,
+          databases, and test automation. Skilled in both teamwork and independent work, I bring creativity, critical
+          thinking, and a goal-oriented mindset to every project. I continuously seek to expand my knowledge, apply
+          innovative solutions, and build reliable, scalable systems that improve user experiences.
+        </p>
+      </div>
 
-		<div id="about-tech" class="md:col-span-2 flex flex-col gap-6">
+      <!-- Tech Stack Card -->
+      <div id="tech" class="p-6 bg-white shadow rounded-xl h-full dark:bg-gray-800">
+        <h2 class="text-2xl font-semibold">Tech Stack</h2>
+        <hr class="max-w-5xl mx-auto my-2 border-gray-300 dark:border-gray-600">
 
-			<div class="p-6 bg-white shadow rounded-xl h-full">
-				<h2 class="text-2xl font-semibold">About</h2>
-				<hr class="max-w-5xl mx-auto my-2 border-gray-300">
+        <!-- Frontend -->
+        <h3 class="text-xl font-semibold mt-2 mb-2">Frontend</h3>
+        <div class="flex flex-wrap gap-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" class="w-8 h-8" alt="HTML">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" class="w-8 h-8" alt="CSS">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" class="w-8 h-8" alt="JavaScript">
+        </div>
 
-				<p class="text-gray-700 leading-relaxed">
-					I am a motivated and adaptable developer with a strong focus on backend development, specializing in
-					APIs, databases, and test automation. Skilled in both teamwork and independent work, I bring
-					creativity, critical thinking, and a goal-oriented mindset to every project. I continuously seek to
-					expand my knowledge, apply innovative solutions, and build reliable, scalable systems that improve
-					user experiences.
-				</p>
-			</div>
+        <!-- Backend -->
+        <h3 class="text-xl font-semibold mt-4 mb-2">Backend</h3>
+        <div class="flex flex-wrap gap-4">
+          <img src="https://cdn.worldvectorlogo.com/logos/php-4.svg" class="w-8 h-8" alt="PHP">
+          <img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" class="w-8 h-8" alt="Laravel">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" class="w-8 h-8" alt="Node.js">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" class="w-8 h-8" alt="CodeIgniter">
+          <img src="https://cdn.worldvectorlogo.com/logos/mysql-logo-pure.svg" class="w-8 h-8" alt="MySQL">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-8 h-8" alt="Firebase">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="w-8 h-8" alt="IBM DB2">
+        </div>
 
-			<div id="tech" class="p-6 bg-white shadow rounded-xl h-full">
-				<h2 class="text-2xl font-semibold">Tech Stack</h2>
-				<hr class="max-w-5xl mx-auto my-2 border-gray-300">
+        <!-- Tools -->
+        <h3 class="text-xl font-semibold mt-4 mb-2">Tools</h3>
+        <div class="flex flex-wrap gap-4">
+          <img src="https://cdn.worldvectorlogo.com/logos/subversion.svg" class="w-8 h-8" alt="Subversion">
+          <img src="https://cdn.worldvectorlogo.com/logos/github-icon-2.svg" class="w-8 h-8" alt="GitHub">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-8 h-8" alt="VSCode">
+        </div>
+      </div>
+    </div>
 
-				<h3 class="text-xl font-semibold mt-2 mb-2">Frontend</h3>
-				<div class="flex flex-wrap gap-4">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"
-						class="w-12 h-12" alt="HTML">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" class="w-12 h-12"
-						alt="CSS">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
-						class="w-12 h-12" alt="JavaScript">
-				</div>
+    <!-- Experience Column -->
+<div id="experience" class="md:col-span-3">
+  <div class="p-6 bg-white shadow rounded-xl h-full dark:bg-gray-800">
+    <h2 class="text-2xl font-semibold">Experience</h2>
+    <hr class="max-w-5xl mx-auto my-2 border-gray-300 dark:border-gray-600">
 
-				<h3 class="text-xl font-semibold mt-4 mb-2">Backend</h3>
-				<div class="flex flex-wrap gap-4">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" class="w-12 h-12"
-						alt="PHP">
-					<img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" class="w-12 h-12" alt="Laravel">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg"
-						class="w-12 h-12" alt="Node.js">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"
-						class="w-12 h-12" alt="CodeIgniter">
-					<img src="https://cdn.worldvectorlogo.com/logos/mysql-logo-pure.svg" class="w-12 h-12" alt="MySQL">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-						class="w-12 h-12" alt="Firebase">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="w-16 h-12"
-						alt="IBM DB2">
-				</div>
+    <!-- Timeline wrapper -->
+    <div class="relative pl-10">
+      <!-- Vertical Line -->
+      <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-500"></div>
 
-				<h3 class="text-xl font-semibold mt-4 mb-2">Tools</h3>
-				<div class="flex flex-wrap gap-4">
-					<img src="https://cdn.worldvectorlogo.com/logos/subversion.svg" class="w-12 h-12" alt="Subversion">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-						class="w-12 h-12" alt="GitHub">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-						class="w-12 h-12" alt="VSCode">
-				</div>
-			</div>
-		</div>
+      <!-- Timeline Item -->
+      <div class="mb-8 relative">
+        <div class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+        <h3 class="font-semibold">Mid Backend Developer - Applic8</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2024 – Present</p>
+        <p class="text-gray-700 dark:text-gray-300">Developed APIs, optimized databases, resolved issues, and implemented test automation.</p>
+      </div>
 
-		<div id="experience" class="md:col-span-3">
-			<div class="p-6 bg-white shadow rounded-xl h-full">
-				<h2 class="text-2xl font-semibold">Experience</h2>
-				<hr class="max-w-5xl mx-auto my-2 border-gray-300">
+      <div class="mb-8 relative">
+        <div class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+        <h3 class="font-semibold">Software Developer - Craft-Tec</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2023 – Jun 2024</p>
+        <p class="text-gray-700 dark:text-gray-300">Built APIs, maintained backend infrastructure, and fixed website bugs.</p>
+      </div>
 
-				<div class="relative pl-10">
-					<div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-500"></div>
+      <div class="mb-8 relative">
+        <div class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+        <h3 class="font-semibold">Junior Backend Developer - eWave</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2021 – Feb 2023</p>
+        <p class="text-gray-700 dark:text-gray-300">Executed data migrations, optimized backend systems, and fixed bugs.</p>
+      </div>
 
-					<div class="mb-8 relative">
-						<div
-							class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white">
-						</div>
-						<h3 class="font-semibold">Mid Backend Developer - Applic8</h3>
-						<p class="text-sm text-gray-500">Jun 2024 - Present</p>
-						<p class="text-gray-700">Developed APIs, optimized databases, resolved issues, and implemented
-							test automation.</p>
-					</div>
+      <div class="mb-8 relative">
+        <div class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+        <h3 class="font-semibold">IT Developer - Everest FDO</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2021 – Nov 2021</p>
+        <p class="text-gray-700 dark:text-gray-300">Designed UX/UI, built front-end components, optimized backend, and provided IT support.</p>
+      </div>
 
-					<div class="mb-8 relative">
-						<div
-							class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white">
-						</div>
-						<h3 class="font-semibold">Software Developer - Craft-Tec</h3>
-						<p class="text-sm text-gray-500">Jun 2023 - Jun 2024</p>
-						<p class="text-gray-700">Built APIs, maintained backend infrastructure, and fixed website bugs.
-						</p>
-					</div>
+      <div class="mb-8 relative">
+        <div class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+        <h3 class="font-semibold">Front End Developer - Increment Technologies</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Aug 2020 – Nov 2020</p>
+        <p class="text-gray-700 dark:text-gray-300">Improved user engagement through front-end development, designed UX/UI, and supported branding.</p>
+      </div>
 
-					<div class="mb-8 relative">
-						<div
-							class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white">
-						</div>
-						<h3 class="font-semibold">Junior Backend Developer - eWave</h3>
-						<p class="text-sm text-gray-500">Sep 2021 - Feb 2023</p>
-						<p class="text-gray-700">Executed data migrations, optimized backend systems, and fixed bugs.
-						</p>
-					</div>
+      <div class="relative">
+        <div class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+        <h3 class="font-semibold">Intern - Dreamscape Networks</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Feb 2020 – Mar 2020</p>
+        <p class="text-gray-700 dark:text-gray-300">Assisted in backend and front-end development, and handled website migration projects.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-					<div class="mb-8 relative">
-						<div
-							class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white">
-						</div>
-						<h3 class="font-semibold">IT Developer - Everest FDO</h3>
-						<p class="text-sm text-gray-500">Jul 2021 - Nov 2021</p>
-						<p class="text-gray-700">Designed UX/UI, built front-end components, optimized backend, and
-							provided IT support.</p>
-					</div>
+  </section>
 
-					<div class="mb-8 relative">
-						<div
-							class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white">
-						</div>
-						<h3 class="font-semibold">Front End Developer - Increment Technologies</h3>
-						<p class="text-sm text-gray-500">Aug 2020 - Nov 2020</p>
-						<p class="text-gray-700">Improved user engagement through front-end development, designed UX/UI,
-							and supported branding.</p>
-					</div>
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto my-6 p-6 bg-white shadow rounded-xl dark:bg-gray-800">
+    <h2 class="text-2xl font-semibold">Projects</h2>
+    <hr class="max-w-5xl mx-auto my-2 border-gray-300 dark:border-gray-600">
+    <div class="p-4 border rounded-lg shadow hover:shadow-lg transition dark:border-gray-600">
+      <h3 class="font-bold">Portfolio Website</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm">
+        Responsive portfolio with timeline, projects, and contact form.
+      </p>
+      <a href="https://your-portfolio-link.com" target="_blank"
+        class="inline-block mt-3 text-blue-600 hover:underline font-medium dark:text-blue-400 dark:hover:text-blue-300">
+        🔗 View Project
+      </a>
+    </div>
+  </section>
 
-					<div class="relative">
-						<div
-							class="absolute -left-[2.15rem] top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-2 border-white">
-						</div>
-						<h3 class="font-semibold">Intern - Dreamscape Networks</h3>
-						<p class="text-sm text-gray-500">Feb 2020 - Mar 2020</p>
-						<p class="text-gray-700">Assisted in backend and front-end development, and handled website
-							migration projects.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Contact -->
+  <hr class="max-w-5xl mx-auto my-6 border-gray-300 dark:border-gray-600">
+  <div class="text-center text-gray-700 dark:text-gray-300 mb-4">
+    You can reach me at
+    <a href="mailto:kent@example.com" class="text-blue-600 hover:underline dark:text-blue-400">kent@example.com</a> |
+    <a href="tel:+639123456789" class="text-blue-600 hover:underline dark:text-blue-400">+63 912 345 6789</a>
+  </div>
 
-	<section id="projects" class="max-w-5xl mx-auto my-6 p-6 bg-white shadow rounded-xl">
-		<h2 class="text-2xl font-semibold">Projects</h2>
-		<hr class="max-w-5xl mx-auto my-2 border-gray-300">
+  <!-- Dark Mode Script -->
+  <script>
+    const htmlEl = document.documentElement;
+    const toggleBtn = document.getElementById("theme-toggle");
 
-		<div class="p-4 border rounded-lg shadow hover:shadow-lg transition">
-			<h3 class="font-bold">Portfolio Website</h3>
-			<p class="text-gray-600 text-sm">
-				Responsive portfolio with timeline, projects, and contact — built to showcase my journey as a developer.
-			</p>
-			<a href="#" target="_blank"
-				class="inline-block mt-3 text-blue-600 hover:underline font-medium">
-				🔗 View Project
-			</a>
-		</div>
-	</section>
+    if (localStorage.getItem("theme") === "dark") {
+      htmlEl.classList.remove("light");
+      htmlEl.classList.add("dark");
+      toggleBtn.textContent = "☀️";
+    }
 
-
-	<hr class="max-w-5xl mx-auto my-6 border-gray-300">
-
-	<div class="text-center text-gray-700 mb-4">
-		You can reach me at
-		<a href="mailto:kent@example.com" class="text-blue-600 hover:underline">setenta.kent@gmail.com</a>
-		|
-		<a href="tel:+639123456789" class="text-blue-600 hover:underline">+63 961 663 1630</a>
-	</div>
-
-
+    toggleBtn.addEventListener("click", () => {
+      if (htmlEl.classList.contains("dark")) {
+        htmlEl.classList.remove("dark");
+        htmlEl.classList.add("light");
+        localStorage.setItem("theme", "light");
+        toggleBtn.textContent = "🌙";
+      } else {
+        htmlEl.classList.remove("light");
+        htmlEl.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        toggleBtn.textContent = "☀️";
+      }
+    });
+  </script>
 </body>
-
 </html>
